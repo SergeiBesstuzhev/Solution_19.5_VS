@@ -5,7 +5,7 @@ public:
     virtual void Voice() {
         std::cout << "Animal voice" << std::endl;
     }
-private:
+    virtual ~Animal(){}
 };
 
 class Dog : public Animal {
@@ -22,7 +22,7 @@ public:
     }
 private:
 };
-class Telka : public Animal {
+class Chick : public Animal {
 public:
     void Voice() override {
         std::cout << "Хочу последний айфон и на море" << std::endl;
@@ -39,10 +39,11 @@ int main()
 
     Animals[0] = new Dog;
     Animals[1] = new Cat;
-    Animals[2] = new Telka;
+    Animals[2] = new Chick;
 
     for (int i = 0; i < 3; i++) {
         Animals[i]->Voice();
+        delete Animals[i];
     }
-    delete[] Animals;
+    //delete[] Animals;
 }
