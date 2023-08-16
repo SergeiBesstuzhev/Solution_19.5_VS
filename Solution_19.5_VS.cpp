@@ -5,7 +5,7 @@ public:
     virtual void Voice() {
         std::cout << "Animal voice" << std::endl;
     }
-    virtual ~Animal(){}
+    virtual ~Animal(){} // иначе не будет очищаться память наследников
 };
 
 class Dog : public Animal {
